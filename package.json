@@ -1,0 +1,21 @@
+{
+  "name": "db8-events",
+  "version": "0.1.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "private": true,
+  "scripts": {
+    "start": "yarn workspace server server",
+    "build": "npm-run-all client:build server:build",
+    "dev": "run-p client:dev server:dev",
+    "client:dev": "yarn workspace client start",
+    "client:build": "yarn workspace client build ",
+    "server:dev": "yarn workspace server watch:dev",
+    "server:build": "yarn workspace server build"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
